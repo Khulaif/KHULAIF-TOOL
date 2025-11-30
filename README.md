@@ -1,117 +1,31 @@
-=====================================================
-          KHULAIF TOOL - Advanced Email OSINT
-=====================================================
+New Tool Alert: KHULAIF TOOL - Advanced Email OSINT
+I'm excited to share a powerful new resource for security researchers, penetration testers, and anyone interested in Open Source Intelligence (OSINT)!
 
-WHAT IS KHULAIF TOOL?
----------------------
-KHULAIF TOOL is an advanced Email OSINT (Open Source Intelligence) tool
-that helps you gather information about email addresses including:
-- DNS Records (MX, A, TXT)
-- Data Breach Information (via HaveIBeenPwned)
-- Social Media Profiles
-- Google Dork Search Links
+Introducing KHULAIF TOOL - an advanced Python utility designed to gather comprehensive information from a target email address.
 
+🔍 What Does it Do?
+This tool automates several critical OSINT checks, providing a consolidated view for deeper investigation:
 
-INSTALLATION
-------------
-1. Make sure Python is installed on your system
+DNS Record Lookup: Extracts vital domain information, including MX (Mail Exchange), A (IP Address), and TXT records (SPF, domain verification).
 
-2. Install required dependencies:
-   Open Command Prompt or PowerShell in this folder and run:
-   
-   python -m pip install -r requirements.txt
+Data Breach Check: Integrates with the HaveIBeenPwned API to instantly check if the target email has been compromised in known data breaches.
 
+Social Media Discovery: Searches for associated profiles on platforms like GitHub, Instagram, and Twitter.
 
-CONFIGURATION (Optional)
-------------------------
-To use the HaveIBeenPwned API feature, you need an API key:
+Google Dork Generation: Creates specialized search links for advanced, deeper investigation using Google Dorking techniques.
 
-1. Get your free API key from: https://haveibeenpwned.com/API/Key
-2. Open "config.json" file
-3. Replace "your_api_key_here" with your actual API key
-4. Save the file
+💡 Why is this useful?
+Whether you're performing a vulnerability assessment, conducting a due diligence check, or simply hardening your own digital footprint, KHULAIF TOOL provides a quick and efficient way to gather the initial intelligence needed.
 
-Example config.json:
-{
-    "hibp_api_key": "abc123xyz456youractualkey"
-}
+💻 How to Get Started:
+Make sure you have Python installed.
 
+Clone the repository (or download the tool).
 
-HOW TO USE
-----------
-Basic command format:
+Install dependencies: python -m pip install -r requirements.txt
 
-python khulaif_tool.py -e <target_email>
+Run a basic scan: python khulaif_tool.py -e yourtarget@example.com
 
-Examples:
+P.S. Don't forget to configure your HaveIBeenPwned API key in config.json for the breach detection feature!
 
-1. Basic scan:
-   python khulaif_tool.py -e test@example.com
-
-2. Scan your own email:
-   python khulaif_tool.py -e yourname@gmail.com
-
-3. View help:
-   python khulaif_tool.py -h
-
-
-WHAT THE TOOL DOES
-------------------
-When you run the tool with an email address, it will:
-
-1. Display the KHULAIF TOOL banner
-2. Validate the email format
-3. Extract domain information
-4. Query DNS records:
-   - MX Records (Mail Exchange servers)
-   - A Records (IP addresses)
-   - TXT Records (Domain verification, SPF, etc.)
-5. Check HaveIBeenPwned for data breaches (if API key configured)
-6. Search for social media profiles (GitHub, Instagram, Twitter)
-7. Generate Google Dork search links for deeper investigation
-
-
-OUTPUT INFORMATION
-------------------
-The tool provides color-coded output:
-- YELLOW: Processing/Information
-- GREEN: Success/Found
-- RED: Error/Not Found
-- CYAN: Banner and Headers
-
-
-TROUBLESHOOTING
----------------
-Problem: "pip is not recognized"
-Solution: Use "python -m pip install -r requirements.txt"
-
-Problem: "Python is not recognized"
-Solution: Make sure Python is installed and added to PATH
-
-Problem: No breaches shown even though email is compromised
-Solution: Add your HaveIBeenPwned API key to config.json
-
-Problem: Unicode/Encoding errors
-Solution: Make sure your terminal supports UTF-8 encoding
-
-
-LEGAL NOTICE
-------------
-This tool is for educational and legitimate security research purposes only.
-Only use this tool on email addresses you own or have explicit permission
-to investigate. Unauthorized use may violate privacy laws and terms of service.
-
-
-SUPPORT
--------
-For questions or issues, please ensure:
-1. Python is properly installed
-2. All dependencies are installed
-3. You have internet connection
-4. The email format is valid
-
-
-=====================================================
-           Created by: KHULAIF
-           Version: 1.0
-=====================================================
+⚠️ A quick reminder (Legal Notice): This tool is for educational and legitimate security research purposes only. Only use it on email addresses you own or have explicit permission to investigate.
